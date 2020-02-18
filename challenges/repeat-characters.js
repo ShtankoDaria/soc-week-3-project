@@ -1,8 +1,17 @@
 console.log('-- load & test repeatCharacters --');
-debugger; // step through loading & testing
+//debugger; // step through loading & testing
 
 // reapeat each character in a string, without changing the order
 function repeatCharacters(str, repetitions) {
+  //return str.split('').repeat(repetitions).join('');
+  var rep = Number(repetitions);
+  var characters = str.split(' ');
+  var repeated = [];
+  for(var i = 0; i < characters.length; i ++){
+  repeated.switch(characters[i].repeatCharacters(rep).join(''));
+ }  
+ return repeated.join(' ');
+
 
 }
 
@@ -27,17 +36,20 @@ console.log(repeatCharactersTests);
 
 // declare handler
 function repeatCharactersHandler() {
-  debugger; // step through user actions
+  //debugger; // step through user actions
 
   // read & process user input
-
-  const numRepeatsIsANumber = typeof numRepeats === 'number';
-  console.assert(numRepeatsIsANumber, 'cast numRepeats to type "number"');
+  const userPhrase = prompt("enter a text");
+  const userNumStr = prompt("enter a number of repetitions");
+  // cast userNumStr to a Number, and assign the value to userNum
+ 
+  const numRepeatsIsANumber = typeof userNumStr === 'number';
+  console.assert(numRepeatsIsANumber, 'cast userNumStr to type "number"');
 
   // execute core logic
-
+  const result = repeatCharacters(userPhrase,userNumStr);
   // display result to user
-
+  alert(result);
   // log action for developer
   console.log('\n-- repeatCharacters --');
   // user inputs
