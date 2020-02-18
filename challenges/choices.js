@@ -1,10 +1,18 @@
 console.log('-- load & test choices --');
-debugger; // step through loading & testing
+//debugger; // step through loading & testing
 
 // first argument is any string
 // second argument is what to do to that string
 function choices(str, option) {
-
+ if (option == "big"){
+  return str.toUpperCase();
+ } else if (option == "small") {
+  return str.toLowerCase();
+ } else if (option == "slim") {
+  return str.replace(/\s+/g, '');
+ } else {
+   return 'invalid option';
+ }
 }
 
 // declare and evaluate test cases for choices
@@ -36,14 +44,17 @@ console.log(choicesTests);
 
 // declare handler
 function choicesHandler() {
-  debugger; // step through user actions
+ // debugger; // step through user actions
 
   // read & process user input
+  const userPhrase = prompt("enter a text");
+  const userOption = prompt("in what do you want to convert?");
+
 
   // execute core logic
-
+  const result = choices(userPhrase, userOption);
   // display result to user
-
+  alert(result);
   // log action for developer
   console.log('\n-- choices --');
   // user inputs
