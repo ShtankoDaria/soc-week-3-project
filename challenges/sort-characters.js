@@ -1,5 +1,5 @@
 console.log('-- load & test sortCharacters --');
-debugger; // step through loading & testing
+//debugger; // step through loading & testing
 
 /* sort the characters in a string
   each character in a javascript string has a "charCode" number
@@ -9,7 +9,7 @@ debugger; // step through loading & testing
   to sort strings you rearrange the characters in charCode order
 */
 function sortCharacters(str) {
-
+  return str.split('').sort().join('');
 }
 
 // declare and evaluate test cases for sortCharacters
@@ -34,17 +34,18 @@ console.log(sortCharactersTests);
 
 // declare handler
 function sortCharactersHandler() {
-  debugger; // step through user actions
+  //debugger; // step through user actions
 
   // read & process user input
-
+  const userPhrase = prompt("enter a text");
+ 
 
   // execute core logic
-
+  const result = sortCharacters(userPhrase);
 
   // display result to user
 
-
+  alert(result);
   // log action for developer
   console.log('\n-- sortCharacters --');
   // user inputs
