@@ -8,7 +8,7 @@ function repeatCharacters(str, repetitions) {
   var characters = str.split(' ');
   var repeated = [];
   for(var i = 0; i < characters.length; i ++){
-  repeated.switch(characters[i].repeatCharacters(rep).join(''));
+  repeated.switch(characters[i].repeat(rep).join(''));
  }  
  return repeated.join(' ');
 
