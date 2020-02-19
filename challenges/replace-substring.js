@@ -1,10 +1,14 @@
 console.log('-- load & test replaceSubstring --');
-debugger; // step through loading & testing
+//debugger; // step through loading & testing
 
 // replace every occurrence of a substring with a new value
 function replaceSubstring(str, oldThing, newThing) {
-
+//  
+return str.replace(oldThing, newThing);
+//}else {
+// return str.replace(oldThing,newThing);
 }
+
 
 // declare and evaluate test cases for replaceSubstring
 const replaceSubstringTests = [
@@ -28,13 +32,18 @@ console.log(replaceSubstringTests);
 
 // declare handler
 function replaceSubstringHandler() {
-  debugger; // step through user actions
+  //debugger; // step through user actions
 
   // read & process user input
+  const userPhrase = prompt("enter a text");
+  const userOldThing = prompt("what do you want to replace?");
+  const userNewThing = prompt("with what do you want to replace it?")
 
   // execute core logic
-
+  const result = replaceSubstring(userPhrase, userOldThing,userNewThing);
   // display result to user
+  
+  alert(result);
 
   // log action for developer
   console.log('\n-- replaceSubstring --');
