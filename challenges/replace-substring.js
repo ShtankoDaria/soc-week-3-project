@@ -5,7 +5,7 @@ console.log("-- load & test replaceSubstring --");
 function replaceSubstring(str, oldThing, newThing) {
   //
   //str = /text/gi;
-  return str.replace(oldThing, newThing);
+  return str.replace(new RegExp(oldThing, "gi"), newThing);
   //}else {
   // return str.replace(oldThing,newThing);
 }
