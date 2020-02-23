@@ -1,4 +1,4 @@
-console.log('-- load & test reverseWords --');
+console.log("-- load & test reverseWords --");
 //debugger; // step through loading & testing
 
 /* individually reverse each word in a sentence
@@ -6,23 +6,28 @@ console.log('-- load & test reverseWords --');
   reverse the characters in each word, but leave the sentence in order
 */
 function reverseWords(str) {
- // return str.split('').reverse().join('');
- var words = str.split(' ');
- var backward = [];
- for(var i = 0; i < words.length; i ++){
-  backward.push(words[i].split('').reverse().join(''));
- }  
- return backward.join(' ');
+  // return str.split('').reverse().join('');
+  var words = str.split(" ");
+  var backward = [];
+  for (var i = 0; i < words.length; i++) {
+    backward.push(
+      words[i]
+        .split("")
+        .reverse()
+        .join("")
+    );
+  }
+  return backward.join(" ");
 }
 
 // declare and evaluate test cases for reverseWords
 const reverseWordsTests = [
-  { name: 'Test 1', args: ['abc def ghi'], expected: 'cba fed ihg' },
-  { name: 'Test 2', args: ['What are these?'], expected: 'tahW era ?eseht' },
-  { name: 'Test 3', args: [''], expected: '' },
-  { name: 'Test 4', args: ['12345'], expected: '54321' },
-  { name: 'Test 5', args: ['const x = null;'], expected: 'tsnoc x = ;llun' },
-  { name: 'Test 6', args: ['<-  ->'], expected: '-<  >-' },
+  { name: "Test 1", args: ["abc def ghi"], expected: "cba fed ihg" },
+  { name: "Test 2", args: ["What are these?"], expected: "tahW era ?eseht" },
+  { name: "Test 3", args: [""], expected: "" },
+  { name: "Test 4", args: ["12345"], expected: "54321" },
+  { name: "Test 5", args: ["const x = null;"], expected: "tsnoc x = ;llun" },
+  { name: "Test 6", args: ["<-  ->"], expected: "-<  >-" }
 ];
 for (let test of reverseWordsTests) {
   const expected = test.expected;
@@ -30,13 +35,12 @@ for (let test of reverseWordsTests) {
   const passing = actual === expected;
   console.assert(passing, test.name);
   test.actual = actual;
-};
+}
 console.log(reverseWordsTests);
-
 
 // declare handler
 function reverseWordsHandler() {
- // debugger; // step through user actions
+  // debugger; // step through user actions
 
   // read & process user input
   const userPhrase = prompt("enter a text");
@@ -48,16 +52,15 @@ function reverseWordsHandler() {
 
   alert(result);
   // log action for developer
-  console.log('\n-- reverseWords --');
+  console.log("\n-- reverseWords --");
   // user inputs
   // result
 }
 
 // attach handler to reverseWords button with an event listener
-document.getElementById('reverseWords-button').addEventListener('click', reverseWordsHandler);
-
-
-
+document
+  .getElementById("reverseWords-button")
+  .addEventListener("click", reverseWordsHandler);
 
 /* looking for a hint?
   try solving the challenge in 3 steps:

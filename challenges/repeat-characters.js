@@ -2,20 +2,17 @@ console.log("-- load & test repeatCharacters --");
 //debugger; // step through loading & testing
 
 // reapeat each character in a string, without changing the order
-function repeatCharacters(str, repetitions) {
+function repeatCharacters(str, rep) {
   //return str.split('').repeat(repetitions).join('');
-  var rep = Number(repetitions);
-  var characters = str.split(" ");
-  var repeated = [];
-  for (var i = 0; i < rep; i++) {
-    repeated
-      .map(characters[i])
-      .repeat(rep)
-      .join(" ");
-  }
-  return repeated.join(" ");
-}
 
+  var characters = str.split("");
+  var repeated = [];
+  for (var i = 0; i < characters.length; i++) {
+    // repeated = characters[i].repeat(rep);
+    repeated.push(characters[i].repeat(rep));
+  }
+  return repeated.join("");
+}
 // declare and evaluate test cases for repeatCharacters
 const repeatCharactersTests = [
   { name: "Test 1", args: ["aaaa", 2], expected: "aaaaaaaa" },
@@ -50,8 +47,8 @@ function repeatCharactersHandler() {
   const userPhrase = prompt("enter a text");
   const userNumStr = prompt("enter a number of repetitions");
   // cast userNumStr to a Number, and assign the value to userNum
-
-  const numRepeatsIsANumber = typeof userNumStr === "number";
+  const userNum = Number(userNumStr);
+  const numRepeatsIsANumber = typeof userNum === "number";
   console.assert(numRepeatsIsANumber, 'cast userNumStr to type "number"');
 
   // execute core logic
